@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__.'/silex.phar';
-//use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Silex\Extension\DoctrineExtension;
 
 $app = new Silex\Application();
@@ -13,7 +12,6 @@ function obtenerLlamadas($db){
            'FROM cel '.
 	   	   'WHERE eventtype LIKE "CHAN_START" '.
 	   	   'AND uniqueid = linkedid';
-    //$dato = $app['db']->fetchAll($sql);
     $query = $db->query($sql);
 	
 	return $query;
